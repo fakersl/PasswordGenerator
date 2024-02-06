@@ -1,0 +1,122 @@
+*{
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #272727;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo{
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.container_input_password{
+    max-width: 440px;
+    margin: 16px 0;
+}
+
+.container_input_password span{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.slider_password{
+    appearance: none;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #d0d0d0;
+    height: 18px;
+    outline: none;
+    margin-top: 8px;
+    padding: 6px;
+    background-color: #fff200;
+}
+
+.slider_password::-webkit-slider-thumb{
+    appearance: none;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #181818;
+    border-radius: 15px;
+}
+
+.button_cta{
+    height: 40px;
+    background-color: #8c00ff;
+    border: 0;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    transition: 300ms ease-in-out;
+    font-weight: bold;
+}
+
+.button_cta:hover{
+    background-color: #8c00ffc5;
+    transform: scale(1.02);
+}
+
+.container_password{
+    max-width: 480px;
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.title{
+    text-align: center;
+    color:#ffffff;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.random_password{
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.442);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: monospace;
+    border: 1px solid #313131;
+    transition: transform 0.5s;
+}
+.random_password:hover{
+    transform: scale(1.02)
+}
+.tooltip_password{
+    color: white;
+    position: relative;
+    top: 20px;
+    padding: 6px 8px;
+    background-color: rgba(0, 0, 0, 0.442);;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.hide{
+  display: none;  
+}
+.container_password:hover .tooltip_password{
+    visibility: visible;
+    bottom: 50px;
+    opacity: 1;
+}
