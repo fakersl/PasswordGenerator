@@ -1,29 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="Gerador de Senhas">
     <title>Gerador de Senhas</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <img class="logo" src="assets/logo.png" alt="Logo do Gerador de Senhas">
-    
-    <main class="container_input_password">
-        <span>Escolha o tamanho da senha: <span id="value_password"></span> caracteres.</span>
-        <input type="range" id="slider_password" class="slider_password" min="7" max="25" value="15">
-        <button id="button" class="button_cta" onclick="generatePassword()">GERAR SENHA</button>
+
+<body class="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-purple-700 to-indigo-900 text-white">
+
+    <!-- Logo -->
+    <img class="w-2/3 max-w-xl mb-8 sm:w-1/2 md:w-1/3" src="assets/logo.png" alt="Logo do Gerador de Senhas">
+
+    <!-- Gerador de senha  -->
+    <main class="w-full max-w-md bg-gray-800 p-8 rounded-3xl drop-shadow-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Gerador de Senhas</h2>
+        <p class="text-lg">Escolha o tamanho da senha: <span id="value_password" class="font-bold">15</span> caracteres.</p>
+
+        <!-- Slider -->
+        <input type="range" id="slider_password" min="7" max="25" value="15"
+            class="w-full mt-4 appearance-none h-4 bg-yellow-300 rounded-lg cursor-pointer">
+
+        <!-- Btn pra gerar -->
+        <button id="button" onclick="generatePassword()"
+            class="w-full mt-6 bg-purple-600 hover:bg-purple-500 transition-all duration-300 text-white font-bold py-3 rounded-lg text-lg">
+            GERAR SENHA
+        </button>
     </main>
-    
-    <div id="container_password" class="container_password hide" onclick="copyPassword()">
-        <span class="title">A senha gerada foi: </span>
-        <span id="random_password" class="random_password"></span>
-        <button type="button" class="btnCopiarSenha">COPIAR SENHA</button>
-        <span class="tooltip_password">Clique na senha acima para copiar!</span>
+
+    <!-- Senha gerada -->
+    <div id="container_password" class="hidden w-full max-w-md mt-8 text-center bg-gray-800 p-6 rounded-3xl shadow-xl cursor-pointer hover:shadow-2xl transition-all"
+        onclick="copyPassword()">
+        <span class="block text-lg font-bold mb-4">A senha gerada foi:</span>
+        <span id="random_password"
+            class="block p-4 bg-gray-700 border-2 border-gray-600 rounded-lg font-mono text-lg transition-transform hover:scale-105 cursor-pointer">
+        </span>
+        
+        <!-- Btn pra copiar -->
+        <button class="mt-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 text-white font-bold py-2 px-6 rounded-lg text-lg">
+            COPIAR SENHA
+        </button>
+
+        <!-- Tooltip -->
+        <span class="block text-sm mt-2 opacity-0 transition-opacity duration-300" id="tooltip">Clique na senha acima para copiar!</span>
     </div>
-    
-    
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
